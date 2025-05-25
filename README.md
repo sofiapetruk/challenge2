@@ -27,10 +27,6 @@
 
 ## Como Rodar o Projeto
 
-### Pré-requisitos
-    IntelliJ IDEA
-    JDK-23
-    Oracle 11
 ### Clonar repositorio
 
     git clone https://github.com/sofiapetruk/smartmottu.git
