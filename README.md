@@ -37,13 +37,14 @@
 
     Vá em Arquivo > Open... e selecione a pasta do projeto clonado
 
-    cd challenge2
+   
 
 
-### Execute os seguintes comando:
+### Execute os seguintes no terminal:
 
-    1. dotnet restore
-    2. dotnet run
+    1.  cd challenge2
+    2. dotnet restore
+    3. dotnet run
 
 
 ### Endponits do projeto
