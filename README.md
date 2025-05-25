@@ -48,7 +48,7 @@
 
 
 ### Endponits do projeto
-#### Url -> http://localhost:5214 ou https://localhost:7012
+#### Url -> http://localhost:5214
 
 | Método | Endpoint                  | Descrição                                                       |
 |--------|---------------------------|-----------------------------------------------------------------|
@@ -66,4 +66,4 @@
 | GET    | [api/motos/{idMoto}]    | Retorna somente uma moto             |
 | PUT    | [api/motos/{idMoto}]    | Atualiza a moto com id especifico    |
 | DELETE | [/motos/{idMoto}] )     | Delete a moto com o id especifico    |
-|SWAGGER| ((https://localhost:7012/swagger/index.html))| Verificar quais atributos temos que utilizar na nossa api|
+|SWAGGER| (https://localhost:7012/swagger/index.html) ou (http://localhost:5214/swagger/index.html)| Verificar quais atributos temos que utilizar na nossa api|
