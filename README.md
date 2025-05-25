@@ -48,6 +48,8 @@
 
 
 ### Endponits do projeto
+#### Url -> http://localhost:5214 ou https://localhost:7012
+
 | Método | Endpoint                  | Descrição                                                       |
 |--------|---------------------------|-----------------------------------------------------------------|
 | POST   | [api/usuarios]            |     Cria um novo usuario                                        |
