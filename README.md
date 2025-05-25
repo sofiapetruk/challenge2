@@ -29,36 +29,38 @@
 
 ### Clonar repositorio
 
-    git clone https://github.com/sofiapetruk/smartmottu.git
+    https://github.com/sofiapetruk/challenge2.git
 
-### Abra o projeto no IntelliJ IDEA:
+### Abra o projeto no Visual Studio:
 
     Inicie o Visual Code
 
-    Vá em File > Open... e selecione a pasta do projeto clonado
+    Vá em Arquivo > Open... e selecione a pasta do projeto clonado
 
-    
+    cd challenge2
 
-### Execute o projeto:
 
-    Clique na seta verde ▶ no canto superior direito
+### Execute os seguintes comando:
+
+    1. dotnet restore
+    2. dotnet run
 
 
 ### Endponits do projeto
-| Método | Endpoint                  | Exemplo                       | Descrição                                                       |
-|--------|---------------------------|-------------------------------|-----------------------------------------------------------------|
-| POST   | [/usuarios]               | (http://localhost:5000/usuarios)|     Cria um novo usuario                                        |
- | POST  | [/usuarios/login]         | (http://localhost:5000/usuarios/login)| Cria um login e verifica se é o mesmo email e senha do cadastro |
-| GET    | [/usuarios]               | (http://localhost:5000/usuarios)   | Retorna todos os usuarios que tem no db                         |
-| GET    | [/usuarios/{idUsuario}]   | (http://localhost:5000/usuarios/1) | Retorna somente um usuario                                      |
-| PUT    | [/usuarios/{idUsuario}] | (http://localhost:5000/usuarios/1) | Atualiza o usuario com id especifico                            |
-| DELETE | [/usuarios/{idUsuario}] | (http://localhost:5000/usuarios/1) | Delete o usuario com o id especifico                            |
+| Método | Endpoint                  | Descrição                                                       |
+|--------|---------------------------|-----------------------------------------------------------------|
+| POST   | [api/usuarios]            |     Cria um novo usuario                                        |
+ | POST  | [api//usuarios/login]     | Cria um login e verifica se é o mesmo email e senha do cadastro |
+| GET    | [api/usuarios]            | Retorna todos os usuarios que tem no db                         |
+| GET    | [api/usuarios/{idUsuario}]| Retorna somente um usuario                                      |
+| PUT    | [api/usuarios/{idUsuario}]| Atualiza o usuario com id especifico                            |
+| DELETE | [api/usuarios/{idUsuario}]| Delete o usuario com o id especifico                            |
 
-| Método | Endpoint                | Exemplo                             | Descrição                            |
-|--------|-------------------------|-------------------------------------|--------------------------------------|
-| POST   | [/motos]             | (http://localhost:5000/motos)      | Cria uma nova mota                   |
-| GET    | [/moto]             | (http://localhost:5000/motos)      | Retorna todos as motos que tem no db |
-| GET    | [/motos/{idMoto}] | (http://localhost:5000/motos/2)    | Retorna somente uma moto             |
-| PUT    | [/motos/{idMoto}]        | (http://localhost:5000/motos/2)     | Atualiza a moto com id especifico    |
-| DELETE | [/motos/{idMoto}] | (http://localhost:5000/motos/2)    | Delete a moto com o id especifico    |
-|SWAGGER| ---------------|((https://localhost:7012/swagger/index.html))| Verificar quais atributos temos que utilizar na nossa api|
+| Método | Endpoint                | Descrição                            |
+|--------|-------------------------|--------------------------------------|
+| POST   | [api/motos]             | Cria uma nova mota                   |
+| GET    | [api/moto]              | Retorna todos as motos que tem no db |
+| GET    | [api/motos/{idMoto}]    | Retorna somente uma moto             |
+| PUT    | [api/motos/{idMoto}]    | Atualiza a moto com id especifico    |
+| DELETE | [/motos/{idMoto}] )     | Delete a moto com o id especifico    |
+|SWAGGER| ((https://localhost:7012/swagger/index.html))| Verificar quais atributos temos que utilizar na nossa api|
