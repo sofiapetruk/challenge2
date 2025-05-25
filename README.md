@@ -37,17 +37,16 @@
 
 ### Abra o projeto no IntelliJ IDEA:
 
-    Inicie o IntelliJ
+    Inicie o Visual Code
 
     Vá em File > Open... e selecione a pasta do projeto clonado
 
-    Aguarde a indexação e o carregamento do Maven
+    
 
 ### Execute o projeto:
 
     Clique na seta verde ▶ no canto superior direito
 
-    Ou use o atalho Shift + F10
 
 ### Endponits do projeto
 | Método | Endpoint                  | Exemplo                       | Descrição                                                       |
