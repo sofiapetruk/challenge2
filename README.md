@@ -42,7 +42,7 @@
 
 ### Execute os seguintes no terminal:
 
-    1.  cd challenge2
+    1.  cd .\challenge2\
     2. dotnet restore
     3. dotnet run
 
