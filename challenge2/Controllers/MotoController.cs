@@ -1,5 +1,4 @@
-﻿
-using Challenge2.Models;
+﻿using Challenge2.Models;
 using Challenge2.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -36,9 +35,8 @@ namespace Challenge2.Controllers
                 })
                 .ToListAsync();
 
-            return motos;
+            return Ok(motos);
         }
-
 
         [HttpGet("{idMoto}")]
         public async Task<ActionResult<MotoResponseDto>> ListAllbyId(int idMoto)
@@ -59,18 +57,13 @@ namespace Challenge2.Controllers
                .FirstOrDefaultAsync();
 
             if (moto == null)
-            {
                 return NotFound();
-            }
 
-            return moto;
+            return Ok(moto);
         }
 
-
         [HttpPost]
-        public async Task<ActionResult<Moto>> PostMoto(MotoRequestDto request)
-
-
+        public async Task<ActionResult<MotoResponseDto>> PostMoto(MotoRequestDto request)
         {
             var status = await _context.TipoStatus
                 .FirstOrDefaultAsync(s => s.Status == request.Status);
@@ -97,7 +90,6 @@ namespace Challenge2.Controllers
                 };
                 _context.TipoMotos.Add(tipo);
                 await _context.SaveChangesAsync();
-
             }
 
             var moto = new Moto
@@ -108,29 +100,36 @@ namespace Challenge2.Controllers
                 StatusMoto = status,
                 TipoMoto = tipo
             };
+
             _context.Motos.Add(moto);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(ListAllbyId), new { idMoto = moto.IdMoto }, moto);
+            var response = new MotoResponseDto
+            {
+                IdMoto = moto.IdMoto,
+                NmChassi = moto.NmChassi,
+                Placa = moto.Placa,
+                Unidade = moto.Unidade,
+                Status = status.Status,
+                Modelo = tipo.NmTipo
+            };
 
-
+            return CreatedAtAction(nameof(ListAllbyId), new { idMoto = moto.IdMoto }, response);
         }
 
         [HttpPut("{idMoto}")]
-        public async Task<ActionResult<Moto>> PutMoto(int idMoto, MotoRequestDto request)
+        public async Task<ActionResult<MotoResponseDto>> PutMoto(int idMoto, MotoRequestDto request)
         {
             var moto = await _context.Motos
-               .Include(m => m.StatusMoto)
-               .Include(m => m.TipoMoto)
-               .FirstOrDefaultAsync(m => m.IdTipoMoto == idMoto);
+                .Include(m => m.StatusMoto)
+                .Include(m => m.TipoMoto)
+                .FirstOrDefaultAsync(m => m.IdMoto == idMoto); 
 
             if (moto == null)
-            {
                 return NotFound();
-            }
 
             var status = await _context.TipoStatus
-              .FirstOrDefaultAsync(s => s.Status == request.Status);
+                .FirstOrDefaultAsync(s => s.Status == request.Status);
 
             if (status == null)
             {
@@ -144,7 +143,7 @@ namespace Challenge2.Controllers
             }
 
             var tipo = await _context.TipoMotos
-               .FirstOrDefaultAsync(t => t.NmTipo == request.Modelo);
+                .FirstOrDefaultAsync(t => t.NmTipo == request.Modelo);
 
             if (tipo == null)
             {
@@ -154,7 +153,6 @@ namespace Challenge2.Controllers
                 };
                 _context.TipoMotos.Add(tipo);
                 await _context.SaveChangesAsync();
-
             }
 
             moto.NmChassi = request.NmChassi;
@@ -164,19 +162,26 @@ namespace Challenge2.Controllers
             moto.TipoMoto = tipo;
 
             await _context.SaveChangesAsync();
-            return Ok(moto);
+
+            var response = new MotoResponseDto
+            {
+                IdMoto = moto.IdMoto,
+                NmChassi = moto.NmChassi,
+                Placa = moto.Placa,
+                Unidade = moto.Unidade,
+                Status = status.Status,
+                Modelo = tipo.NmTipo
+            };
+
+            return Ok(response);
         }
-
-
 
         [HttpDelete("{idMoto}")]
         public async Task<IActionResult> Delete(int idMoto)
         {
             var moto = await _context.Motos.FindAsync(idMoto);
             if (moto == null)
-            {
                 return NotFound();
-            }
 
             _context.Motos.Remove(moto);
             await _context.SaveChangesAsync();

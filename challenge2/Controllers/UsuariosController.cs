@@ -29,9 +29,9 @@ namespace Challenge2.Controllers
                     Senha = u.Senha,
                 })
                 .ToListAsync();
-            
 
-            return usuarios;
+
+            return Ok(usuarios);
         }
 
         [HttpGet("{idUsuario}")]
@@ -53,7 +53,7 @@ namespace Challenge2.Controllers
                 return NotFound();
             }
 
-            return usuario;
+            return Ok(usuario);
         }
 
         [HttpPut("{idUsuario}")]

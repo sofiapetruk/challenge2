@@ -2,7 +2,7 @@
 {
     public class MotoResponseDto
     {
-        public long IdMoto { get; set; }
+        public int IdMoto { get; set; }
         public string NmChassi { get; set; }
         public string Placa { get; set; }
         public string Unidade { get; set; }
