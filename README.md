@@ -29,18 +29,18 @@
 
 ### Clonar repositorio
 
-    https://github.com/sofiapetruk/challenge2.git
+    
 
 ### Abra o projeto no Visual Studio:
 
-    Inicie o Visual Code
+    1. Inicie o Visual Code
+    2. Clique em "Clonar um repositório"
+    3. Escolha a opção de github
+    4. https://github.com/sofiapetruk/challenge2.git
+    5. Será aberto o projeto
 
-    Vá em Arquivo > Open... e selecione a pasta do projeto clonado
 
-   
-
-
-### Execute os seguintes no terminal:
+### Execute os seguintes comandos no terminal:
 
     1.  cd .\challenge2\
     2. dotnet restore
